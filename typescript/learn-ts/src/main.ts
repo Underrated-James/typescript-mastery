@@ -340,3 +340,28 @@ const user4: User2 = {
 console.log(user4)
 
 
+const arr2 = [1,2,3,4,5,6]
+const target = 10;
+
+function result1(arr: number[], target: number){
+
+  for(let i = 0; i < arr.length - 1; i++){
+    for(let j = i + 1; j < arr.length; j++){
+      
+      if(arr[i] + arr[j] == target){
+        console.log(`Found match Elements: ${arr[i]} and ${arr[j]}`)
+      }
+    }
+  }
+}
+
+result1(arr2,target)
+
+//reversing string
+const str = "i am Didyeey"
+
+function reverse(element: string): string {
+  return element.split("").reverse().join("")
+}
+
+console.log(reverse(str))
