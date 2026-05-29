@@ -108,3 +108,88 @@ console.log(nums2)
 let test: number | boolean
 test = true
 console.log(typeof test)
+
+
+
+const username1: string = "Didyeey"
+console.log(username1)
+
+const price1: number = 99.99
+console.log(price1)
+
+const isAdmin: boolean = false;
+console.log(isAdmin)
+
+let union1: string | number;
+union1 = "testing"
+console.log(union1)
+
+const product = (a: number, b: number) => {
+  return a * b
+}
+
+console.log(product(2,2))
+
+const arr1: string[] = ["apple", "banana", "orange"]
+console.log(arr1)
+
+const mixType: (string | number | boolean)[] = ["hello", 22, false]
+console.log(mixType)
+
+const tuple1: [string, number, boolean] = ["testing", 32, false]
+console.log(tuple1)
+
+const obj12: {name: string, age: number} = {
+  name: "test name",
+  age: 21
+}
+
+console.log(obj12)
+
+
+
+function subtract(a: number,b: number)  {
+  return a - b
+}
+console.log(subtract(2,1))
+
+
+const array: number[] = [1,2,3,4,5]
+
+const produce = array.map((element) => {
+  return element * 2
+})
+
+console.log(produce)
+
+const array1: number[] = [50,56,98,32,97,55,23]
+
+const product1 = array1.filter((element) => {
+  return element > 50
+})
+
+console.log(product1)
+
+const array2: number[] = [1,2,3,4,5]
+
+const total = array2.reduce((acc, element) => {
+  return acc + element
+}, 0)
+
+console.log(total)
+
+const find = array.find((element) => element == 4)
+
+console.log(find)
+
+const some = array1.some((element) => element >= 50)
+console.log(some)
+
+const positive = array1.every((element) => element > 1)
+console.log(positive)
+
+function info(name: string, age: number){
+  return console.log(`${name} is ${age} years old`)
+}
+
+info("dexter", 2)
