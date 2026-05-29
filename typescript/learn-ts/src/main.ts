@@ -191,6 +191,7 @@ interface User {
   name: string;
   age?: number;
   greet?(): void;
+  status?: Status;
 }
 
 const user1: User = {
@@ -204,9 +205,9 @@ const user2: User = {
   name: "John Smith",
   age: 39,
 
-  greet(){
-    return `hello my name is ${this.name} and my age is ${this.age}`
-  }
+  greet() {
+    return `hello my name is ${this.name} and my age is ${this.age}`;
+  },
 };
 
 console.log(user2.greet?.());
@@ -234,43 +235,76 @@ const product2: multiply = (a, b) => {
 console.log(product2(2, 3));
 
 interface birds {
-  fly: string
+  fly: string;
 }
 
 interface eagle extends birds {
-  name: string,
-  eat: true
+  name: string;
+  eat: true;
 }
 
 const phEagle: eagle = {
   name: "eagle 1",
   eat: true,
-  fly: "yes"
-}
+  fly: "yes",
+};
 
-phEagle.fly = "false"
+phEagle.fly = "false";
 
-console.log(phEagle)
-
+console.log(phEagle);
 
 // Type Alias
 
+type Status = "active" | "inactive" | "pending";
+
+type UserID = string | number;
+
 type User1 = {
-  readonly id?: string;
+  readonly id?: UserID;
   name: string;
   isAdmin: boolean;
   age: number;
-  greet(name: string, age: number): void
-}
-
+  greet(name: string, age: number): void;
+  status: Status;
+};
 
 const user3: User1 = {
+  id: 12312,
   name: "didyeey",
   isAdmin: true,
   age: 21,
   greet() {
-    return `Hello my name is ${this.name} i am ${this.age} years old`
-  }
-}
+    return `Hello my name is ${this.name} i am ${this.age} years old (Status: ${this.status})`;
+  },
+  status: "active",
+};
 
-console.log(user3.greet?.(user3.name, user3.age))
+console.log(user3.greet?.(user3.name, user3.age));
+
+type add1 = (a: number, b: number) => number;
+
+const sum3: add1 = (a, b) => {
+  return a + b;
+};
+
+console.log(sum3(2, 3));
+
+type admin = User1 & {
+  lastname: string;
+  firstname: string;
+};
+
+const person1: admin = {
+  id: 12312,
+  name: "didyeey",
+  isAdmin: true,
+  age: 21,
+  greet() {
+    return `Hello my name is ${this.name} i am ${this.age} years old (Status: ${this.status})`;
+  },
+  status: "active",
+  firstname: "dexter",
+  lastname: "quins"
+};
+
+console.log(person1)
