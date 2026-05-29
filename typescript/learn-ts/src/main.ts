@@ -251,3 +251,26 @@ const phEagle: eagle = {
 phEagle.fly = "false"
 
 console.log(phEagle)
+
+
+// Type Alias
+
+type User1 = {
+  readonly id?: string;
+  name: string;
+  isAdmin: boolean;
+  age: number;
+  greet(name: string, age: number): void
+}
+
+
+const user3: User1 = {
+  name: "didyeey",
+  isAdmin: true,
+  age: 21,
+  greet() {
+    return `Hello my name is ${this.name} i am ${this.age} years old`
+  }
+}
+
+console.log(user3.greet?.(user3.name, user3.age))
