@@ -308,3 +308,35 @@ const person1: admin = {
 };
 
 console.log(person1)
+
+// enums
+
+enum Role {
+  admin = "Admin",
+  user = "User",
+  customer = "Customer"
+}
+
+interface User2 {
+  readonly id: UserID;
+  name: String;
+  age: number;
+  role: Role;
+  isStudent: boolean
+  introduce(): void
+}
+
+const user4: User2 = {
+  id: "NMBS-001",
+  name: "Didyeey",
+  age: 23,
+  role: Role.user,
+  isStudent: true,
+  introduce(){
+    return `I am ${this.name} ${this.age} years old my role here is ${this.role} and if you're thinking im a student ? yes its ${this.isStudent} `
+  }
+}
+
+console.log(user4)
+
+
