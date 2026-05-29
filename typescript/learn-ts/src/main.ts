@@ -248,4 +248,6 @@ const phEagle: eagle = {
   fly: "yes"
 }
 
+phEagle.fly = "false"
+
 console.log(phEagle)
